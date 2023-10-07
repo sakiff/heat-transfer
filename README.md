@@ -1,3 +1,3 @@
 # heat-transfer
-![sim](/heat_equation_solution.gif)
+<img src="/heat_equation_solution.gif" width="150" height="150"/>
 
