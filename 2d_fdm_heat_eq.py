@@ -27,7 +27,7 @@ T_bottom = 200.0
 T_right = 0.0
 
 # Set the initial condition
-u.fill(T_initial)
+T.fill(T_initial)
 
 # Set the boundary conditions
 T[:, (plate_length-1):, :] = T_top
@@ -42,8 +42,8 @@ def calculate(u):
     for k in range(0, max_iteration_time-1, 1):
         for i in range(1, plate_length-1, delta_x):
             for j in range(1, plate_length-1, delta_x):
-                T[k + 1, i, j] = gamma * (T[k][i+1][j] + T[k][i-1][j] + T[k][i][j+1] + T[k][i][j-1] - 4*T[k][i][j]) + T[k][i][j]
-
+                T[k + 1, i, j] = gamma * (T[k][i+1][j] + T[k][i-1][j] +
+                                          T[k][i][j+1] + T[k][i][j-1] - 4*T[k][i][j]) + T[k][i][j]
     return T
 
 def plotheatmap(u_k, k):
@@ -55,7 +55,7 @@ def plotheatmap(u_k, k):
     plt.ylabel("y")
 
     # This is to plot u_k (u at time-step k)
-    plt.pcolormesh(u_k, cmap=plt.cm.jet, vmin=0, vmax=100)
+    plt.pcolormesh(u_k, cmap=plt.cm.RdYlBu_r, vmin=0, vmax=100)
     plt.colorbar()
 
     return plt

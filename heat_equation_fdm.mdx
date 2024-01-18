@@ -1,17 +1,22 @@
 ## Heat Equation Simulation on a cartesian plane with boundary conditions 
 
-
-
-
-#### revisiting problem but in a transient state
+Here I am revisting the heat equation. I haven't done this since my college days so definitely was rusty and had to brush up on a bunch of material. Back then I ran simulations on MatLab, but here I'll be running them with some open source python libraries. 
 
 - include college report here
 - define problem being solved and improved solution ; with new tech stack and added features
 
 #### heat Equation
 
-- General Heat Transfer 
-Q_in  + Q_gen - Q_out = 0
+- General Heat Transfer Equation in in 2D (Cartesian)
+dU/dt - a(d2u/dx + d2u/dy) = 0
+
+where tempature is represented by u, x and y being the spatial dimensions, t for time, and alpha is the thermal diffusivity constant.
+
+the partial differential equation described the behavior of heat transfer infinitisemally over space and time. It would be impossible (or would take forever) for a computer to calculate an infinite number of heat transfer or temperature over an infinite number of time and space steps. 
+
+we break this down by <i>discretizing</i> the solution into a finite number of time and space steps.
+
+
 
 - Cartesian Heat Transfer Steady State
 Txx + Tyy = 0
